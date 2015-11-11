@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   color: $base-font-color;
   font-family: $base-font-family;
@@ -42,8 +48,10 @@ hr {
   margin: $base-spacing 0;
 }
 
-img,
-picture {
-  margin: 0;
+img, picture,
+object {
+  // http://stackoverflow.com/questions/10844205/html-5-strange-img-always-adds-3px-margin-at-bottom
+  vertical-align: middle;
   max-width: 100%;
+  height: auto;
 }
