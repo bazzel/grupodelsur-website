@@ -1,0 +1,18 @@
+.container
+  header
+    = image_tag lorem.image('350x90')
+  aside
+    menu
+      - 5.times do
+        li = lorem.words rand(1..2)
+
+  section.content
+    - 3.times do
+      article
+        h1 = lorem.sentence
+        p = lorem.paragraph
+  section.sidebar
+    - 3.times do
+      article
+        h1 = lorem.sentence
+        p = lorem.paragraph

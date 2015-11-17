@@ -1,0 +1,36 @@
+$susy: (
+  gutter-position: after,
+  container: 960px,
+  columns: 12,
+  gutters: .5,
+  global-box-sizing: border-box,
+  debug: (
+    image: show,
+    color: rgba(#F44336, .25),
+    output: overlay,
+    toggle: top right,
+  )
+);
+
+.container {
+  @include container;
+}
+
+header {
+  @include full;
+}
+
+aside {
+  @include span(4);
+  background: #ccc;
+}
+
+.content {
+  @include span(4);
+  background: #ccc;
+}
+
+.sidebar {
+  @include span(last 4);
+  background: #ccc;
+}
