@@ -1,20 +1,3 @@
-$susy: (
-gutter-position: after,
-container: 95%,
-columns: 12,
-gutters: .5,
-global-box-sizing: border-box,
-debug: (
-  image: show,
-  color: rgba(#F44336, .25),
-  output: overlay,
-  toggle: top right,
-  )
-);
-
-$break-medium: 40em;
-$break-large: 60em;
-
 .container {
   @include container;
 }
@@ -44,16 +27,12 @@ aside {
   @include full;
 }
 
-.sidebar {
-  @include full;
-}
-
 @include susy-breakpoint($break-medium, nobreak) {
-  .content {
+  .main-content {
     @include span(6);
   }
 
-  .sidebar {
+  .secondary-content {
     @include span(last 6);
   }
 }
@@ -74,10 +53,6 @@ aside {
   }
 
   .content {
-    @include span(4);
-  }
-
-  .sidebar {
-    @include span(last 4);
+    @include span(8 last);
   }
 }

@@ -40,3 +40,20 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+$susy: (
+  gutter-position: after,
+  container: 95%,
+  columns: 12,
+  gutters: .5,
+  global-box-sizing: border-box,
+  debug: (
+    image: show,
+    color: rgba(#F44336, .25),
+    output: overlay,
+    toggle: top right,
+    )
+);
+$break-medium: 40em;
+$break-large: 60em;
+
