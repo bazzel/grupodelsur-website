@@ -1,16 +1,19 @@
 $susy: (
-  gutter-position: after,
-  container: 960px,
-  columns: 12,
-  gutters: .5,
-  global-box-sizing: border-box,
-  debug: (
-    image: show,
-    color: rgba(#F44336, .25),
-    output: overlay,
-    toggle: top right,
+gutter-position: after,
+container: 95%,
+columns: 12,
+gutters: .5,
+global-box-sizing: border-box,
+debug: (
+  image: show,
+  color: rgba(#F44336, .25),
+  output: overlay,
+  toggle: top right,
   )
 );
+
+$break-medium: 40em;
+$break-large: 60em;
 
 .container {
   @include container;
@@ -21,16 +24,60 @@ header {
 }
 
 aside {
-  @include span(4);
-  background: #ccc;
+  width: 20em;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: all 0.5s;
+
+  &:target {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .content {
-  @include span(4);
-  background: #ccc;
+  @include full;
 }
 
 .sidebar {
-  @include span(last 4);
-  background: #ccc;
+  @include full;
+}
+
+@include susy-breakpoint($break-medium, nobreak) {
+  .content {
+    @include span(6);
+  }
+
+  .sidebar {
+    @include span(last 6);
+  }
+}
+
+@include susy-breakpoint($break-large, $break-large nobreak) {
+  .container {
+    @include container;
+  }
+  .open-menu, .close-menu {
+    display: none;
+  }
+  aside {
+    @include span(4);
+  }
+  #nav {
+    position: initial;
+    transform: none;
+  }
+
+  .content {
+    @include span(4);
+  }
+
+  .sidebar {
+    @include span(last 4);
+  }
 }

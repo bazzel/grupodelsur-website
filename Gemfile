@@ -16,3 +16,4 @@ gem 'slim'
 
 gem 'bitters'
 gem 'susy'
+gem 'breakpoint'

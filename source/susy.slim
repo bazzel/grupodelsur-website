@@ -1,7 +1,10 @@
 .container
   header
+    a.open-menu href='#nav' ☰
     = image_tag lorem.image('350x90')
-  aside
+
+  aside#nav
+    a.close-menu href='#' ☰
     menu
       - 5.times do
         li = lorem.words rand(1..2)
@@ -11,6 +14,7 @@
       article
         h1 = lorem.sentence
         p = lorem.paragraph
+
   section.sidebar
     - 3.times do
       article
