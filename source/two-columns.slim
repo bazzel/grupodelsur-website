@@ -6,8 +6,7 @@
   aside#nav
     a.close-menu href='#' ☰
     menu
-      - 5.times do
-        li = lorem.words rand(1..2)
+      = partial 'nav'
 
   section.content
     - 3.times do
