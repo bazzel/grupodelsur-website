@@ -1,97 +1,238 @@
 ---
 title: Welcome to Middleman
 ---
-<div class="container"><header><a class="open-menu" href="#nav">☰</a><img src="http://placehold.it/350x90"></header><aside id="nav"><a class="close-menu" href="#">☰</a><menu>
-<%= partial 'nav' %>
-</menu></aside><section class="content">
+<div class="container">
+  <header><a class="open-menu" href="#nav">☰</a><img src="http://placehold.it/350x90"></header><aside id="nav"><a class="close-menu" href="#">☰</a>
+    <menu>
+      <%= partial 'nav' %>
+    </menu>
+  </aside>
+  <section class="content">
 
-<h1>HTML Ipsum Presents</h1>
+    <!-- Sample Content to Plugin to Template -->
+    <h1 id='wrapper'>CSS Basic Elements</h1>
 
-<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
 
-<h2>Header Level 2</h2>
+    <hr />
 
-<ol>
-  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-  <li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
+    <h1 id="headings">Headings</h1>
 
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
 
-<h3>Header Level 3</h3>
+    <small><a href="#wrapper">[top]</a></small>
+    <hr />
 
-<ul>
-  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-  <li>Aliquam tincidunt mauris eu risus.</li>
-</ul>
 
-<pre><code>
-#header h1 a {
-  display: block;
-  width: 300px;
-  height: 80px;
-}
-</code></pre>
+    <h1 id="paragraph">Paragraph</h1>
 
-<form action="#" method="post">
-  <div>
-    <label for="name">Text Input:</label>
-    <input type="text" name="name" id="name" value="" tabindex="1" />
-  </div>
+    <img src="http://placehold.it/250x125">
+    <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
 
-  <div>
-    <h4>Radio Button Choice</h4>
+    <img src="http://placehold.it/1920x1200">
+    <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. <mark>Nunc iaculis suscipit dui.</mark> Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
 
-    <label for="radio-choice-1">Choice 1</label>
-    <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" />
+    <small><a href="#wrapper">[top]</a></small>
+    <hr />
 
-    <label for="radio-choice-2">Choice 2</label>
-    <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2" />
-  </div>
+    <h1 id="list_types">List Types</h1>
 
-  <div>
-    <label for="select-choice">Select Dropdown Choice:</label>
-    <select name="select-choice" id="select-choice">
-      <option value="Choice 1">Choice 1</option>
-      <option value="Choice 2">Choice 2</option>
-      <option value="Choice 3">Choice 3</option>
-    </select>
-  </div>
+    <h3>Definition List</h3>
+    <dl>
+      <dt>Definition list</dt>
+      <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</dd>
+      <dt>Lorem ipsum dolor sit amet</dt>
+      <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</dd>
+    </dl>
 
-  <div>
-    <label for="textarea">Textarea:</label>
-    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-  </div>
+    <h3>Ordered List</h3>
+    <ol>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
 
-  <div>
-    <label for="checkbox">Checkbox:</label>
-    <input type="checkbox" name="checkbox" id="checkbox" />
-  </div>
+    <h3>Unordered List</h3>
+    <ul>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
 
-  <div>
-    <input type="submit" value="Submit" />
-  </div>
-</form>
+    <h3>Unordered List: Long Items</h3>
+    <ul>
+      <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+      <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+      <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+      <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+    </ul>
 
-<table>
-  <colgroup span="4"></colgroup>
-  <tr>
-    <th>Countries</th>
-    <th>Capitals</th>
-    <th>Population</th>
-    <th>Language</th>
-  </tr>
-  <tr>
-    <td>USA</td>
-    <td>Washington D.C.</td>
-    <td>309 million</td>
-    <td>English</td>
-  </tr>
-  <tr>
-    <td>Sweden</td>
-    <td>Stockholm</td>
-    <td>9 million</td>
-    <td>Swedish</td>
-  </tr>
-</table>
-</section>
+
+    <h3>Standard List Navigation</h3>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <small><a href="#wrapper">[top]</a></small>
+    <hr />
+
+    <h1 id="form_elements">Fieldsets, Legends, and Form Elements</h1>
+
+    <fieldset>
+      <legend>Legend</legend>
+
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+
+      <form action="#" method="post">
+        <div>
+          <label for="name">Text Input:</label>
+          <input type="text" name="name" id="name" value="" tabindex="1" />
+        </div>
+
+        <div>
+          <h4>Radio Button Choice</h4>
+
+          <label for="radio-choice-1">Choice 1</label>
+          <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" />
+
+          <label for="radio-choice-2">Choice 2</label>
+          <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2" />
+        </div>
+
+        <div>
+          <label for="select-choice">Select Dropdown Choice:</label>
+          <select name="select-choice" id="select-choice">
+            <option value="Choice 1">Choice 1</option>
+            <option value="Choice 2">Choice 2</option>
+            <option value="Choice 3">Choice 3</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="textarea">Textarea:</label>
+          <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+        </div>
+
+        <div>
+          <label for="checkbox">Checkbox:</label>
+          <input type="checkbox" name="checkbox" id="checkbox" />
+        </div>
+
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <form>
+        <h2>Form Element</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+
+        <p><label for="text_field">Text Field:</label><br />
+        <input type="text" id="text_field" /></p>
+
+        <p><label for="text_area">Text Area:</label><br />
+        <textarea id="text_area"></textarea></p>
+
+        <p><label for="select_element">Select Element:</label><br />
+        <select name="select_element">
+          <optgroup label="Option Group 1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </optgroup>
+          <optgroup label="Option Group 2">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </optgroup>
+        </select></p>
+
+        <p><label for="radio_buttons">Radio Buttons:</label><br />
+        <input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1<br/>
+        <input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2<br/>
+        <input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3<br/>
+        </p>
+
+        <p><label for="checkboxes">Checkboxes:</label><br />
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2<br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3<br/>
+        </p>
+
+        <p><label for="password">Password:</label><br />
+        <input type="password" class="password" name="password" />
+        </p>
+
+        <p><label for="file">File Input:</label><br />
+        <input type="file" class="file" name="file" />
+        </p>
+
+
+        <p><input class="button" type="reset" value="Clear" /> <input class="button" type="submit" value="Submit" />
+        </p>
+
+
+
+      </form>
+
+    </fieldset>
+
+    <small><a href="#wrapper">[top]</a></small>
+    <hr />
+
+    <h1 id="tables">Tables</h1>
+
+    <table>
+      <colgroup span="4"></colgroup>
+      <tr>
+        <th>Countries</th>
+        <th>Capitals</th>
+        <th>Population</th>
+        <th>Language</th>
+      </tr>
+      <tr>
+        <td>USA</td>
+        <td>Washington D.C.</td>
+        <td>309 million</td>
+        <td>English</td>
+      </tr>
+      <tr>
+        <td>Sweden</td>
+        <td>Stockholm</td>
+        <td>9 million</td>
+        <td>Swedish</td>
+      </tr>
+    </table>
+
+
+    <small><a href="#wrapper">[top]</a></small>
+    <hr />
+
+    <h1 id="misc">Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.</h1>
+
+    <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p>
+
+    <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p></pre>
+
+    <blockquote>
+      "This stylesheet is going to help so freaking much." <br />-Blockquote
+    </blockquote>
+
+    <small><a href="#wrapper">[top]</a></small>
+    <!-- End of Sample Content -->
+  </section>
+</div>
