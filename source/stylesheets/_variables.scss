@@ -92,3 +92,14 @@ $susy: (
 $break-medium: 40em;
 $break-large: 60em;
 
+// Buttons
+//
+$button-font-family: $heading-font-family;
+$button-font-size: ms(0);
+$button-border-width: 1px;
+$button-border-radius:                2px;
+$button-horizontal-padding:           $base-font-size;
+$button-color:                    $base-font-color;
+$button-bg-color:                 $base-border-color;
+$button-hover-bg-color:           darken($button-bg-color, 5%);
+
