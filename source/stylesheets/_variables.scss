@@ -38,7 +38,7 @@ $h6-font-size            : ms(0);
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height / 2;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
@@ -89,17 +89,20 @@ $susy: (
     toggle: top right,
     )
 );
+
+// Media query
+//
 $break-medium: 40em;
 $break-large: 60em;
 
 // Buttons
 //
-$button-font-family: $heading-font-family;
-$button-font-size: ms(0);
-$button-border-width: 1px;
-$button-border-radius:                2px;
-$button-horizontal-padding:           $base-font-size;
-$button-color:                    $base-font-color;
-$button-bg-color:                 $base-border-color;
-$button-hover-bg-color:           darken($button-bg-color, 5%);
+$button-font-family        : $heading-font-family;
+$button-font-size          : ms(0);
+$button-border-width       : 1px;
+$button-border-radius      : 2px;
+$button-horizontal-padding : $base-font-size;
+$button-color              : $base-font-color;
+$button-bg-color           : $base-border-color;
+$button-hover-bg-color     : darken($button-bg-color, 5%);
 
