@@ -1,25 +1,31 @@
 table {
   border-collapse: collapse;
-  font-feature-settings: "kern", "liga", "tnum";
-  margin: $small-spacing 0;
-  table-layout: fixed;
+  clear: both;
   width: 100%;
-}
+  @include rhythm(1,0,0,1);
+  caption, th, td {
+    vertical-align: top;
+    padding: rhythm(.5);
+    &.right {
+      text-align: right;
+    }
+  }
+  th {
+    font-weight: bold;
+  }
 
-th {
-  border-bottom: 1px solid shade($base-border-color, 25%);
-  font-weight: 600;
-  padding: $small-spacing 0;
-  text-align: left;
-}
+  // Borders
+  th {
+    border-bottom: 1px solid shade($base-border-color, 25%);
+  }
+  td {
+    border-bottom-color: $base-border-color;
+    @include trailing-border($lines: .5);
+  }
 
-td {
-  border-bottom: $base-border;
-  padding: $small-spacing 0;
-}
-
-tr,
-td,
-th {
-  vertical-align: middle;
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
 }
