@@ -11,6 +11,7 @@
   section.content
     - 3.times do
       article
-        h1 = lorem.sentence
+        h2 = lorem.words rand(2...5)
+        h3 = lorem.words rand(2...5)
         - 3.times do
           p = lorem.paragraph
