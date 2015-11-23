@@ -1,10 +1,14 @@
+@include establish-baseline;
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
-* {
+
+*, *:before, *:after {
   margin: 0;
   padding: 0;
 }
@@ -12,25 +16,50 @@ html {
 body {
   color: $base-font-color;
   font-family: $base-font-family;
-  font-feature-settings: "kern", "liga", "pnum";
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-kerning: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body,
+input,
+button  {
+  -webkit-font-smoothing: antialiased;
+}
+
+#{headings()} {
   font-family: $heading-font-family;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+}
+
+h1 {
+  @include adjust-font-size-to($h1-font-size);
+  @include rhythm($header-margin-top, 0, 0, $header-margin-bottom, $h1-font-size);
+}
+h2 {
+  @include adjust-font-size-to($h2-font-size);
+  @include rhythm($header-margin-top, 0, 0, $header-margin-bottom, $h2-font-size);
+}
+h3 {
+  @include adjust-font-size-to($h3-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h3-font-size);
+}
+h4 {
+  @include adjust-font-size-to($h4-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h4-font-size);
+}
+h5 {
+  @include adjust-font-size-to($h5-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h5-font-size);
+}
+h6 {
+  @include adjust-font-size-to($h6-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h6-font-size);
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  @include margin-trailer($paragraph-margin-bottom);
+  & + p {
+    text-indent: $paragraph-text-indent;
+    @include margin-leader(-1 * $paragraph-margin-bottom);
+  }
 }
 
 a {
@@ -46,11 +75,17 @@ a {
 }
 
 hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $base-spacing 0;
+  // Do not break vertical rhythm
+  border: {
+    top: 0;
+    right: 0;
+    bottom: $base-border;
+    left: 0;
+  }
+  margin: {
+    top: rhythm();
+    bottom: rhythm($offset: 1);
+  }
 }
 
 img, picture,
@@ -59,4 +94,8 @@ object {
   vertical-align: middle;
   max-width: 100%;
   height: auto;
+}
+
+code, pre {
+  font-family: $monospace-font-family;
 }

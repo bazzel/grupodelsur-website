@@ -1,4 +1,5 @@
 require 'susy'
+require 'modular-scale'
 
 ###
 # Compass

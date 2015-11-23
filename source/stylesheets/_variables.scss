@@ -1,19 +1,50 @@
+// Vertical Rhythm
+// $base-font-size: 16px;
+$base-line-height: 26px;
+// $rhythm-unit: 'em';
+
+// Google fonts
+//
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono|Milonga|Open+Sans:400,300,300italic,400italic,600,600italic);
+$serif-font-family       : 'Milonga', cursive;
+$sans-serif-font-family  : 'Open Sans', sans-serif;
+$monospace-font-family   : 'Ubuntu Mono', Courier, monospace;
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$base-font-family: $sans-serif-font-family;
+$heading-font-family: $serif-font-family;
 
 // Font Sizes
-$base-font-size: 1em;
 
-// Line height
-$base-line-height: 1.5;
-$heading-line-height: 1.2;
+// Modular Scale
+//
+// https://github.com/at-import/modular-scale
+$ms-ratio                : $fifth; // https://github.com/at-import/modular-scale#ratios
+$ms-base                 : $base-font-size $base-line-height;
+//
+// End Modular Scale
+
+// Font sizes
+//
+// http://modularscale.com/scale/?px1=16&px2=42&ra1=1.5&ra2=0
+$h1-font-size            : ms(5);
+$h2-font-size            : ms(4);
+$h3-font-size            : ms(3);
+$h4-font-size            : ms(2);
+$h5-font-size            : ms(1);
+$h6-font-size            : ms(0);
+//
+// End Font sizes
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
-$base-z-index: 0;
+
+$paragraph-margin-bottom : 1;
+$paragraph-text-indent   : 1.5rem;
+
+$header-margin-top       : 0;
+$header-margin-bottom    : 1;
+
 
 // Colors
 $blue: #477dca;
@@ -27,7 +58,8 @@ $action-color: $blue;
 
 // Border
 $base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$base-border-width: 1px;
+$base-border: $base-border-width solid $base-border-color;
 
 // Background Colors
 $base-background-color: #fff;
@@ -54,6 +86,20 @@ $susy: (
     toggle: top right,
     )
 );
+
+// Media query
+//
 $break-medium: 40em;
 $break-large: 60em;
+
+// Buttons
+//
+$button-font-family        : $base-font-family;
+$button-font-size          : ms(0);
+$button-border-width       : 1px;
+$button-border-radius      : 2px;
+$button-horizontal-padding : $base-font-size;
+$button-color              : $base-font-color;
+$button-bg-color           : $base-border-color;
+$button-hover-bg-color     : darken($button-bg-color, 5%);
 

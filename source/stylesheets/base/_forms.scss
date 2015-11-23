@@ -1,8 +1,19 @@
+form {
+  p {
+    text-indent: initial;
+    margin-top: 0;
+  }
+}
+
 fieldset {
   background-color: $secondary-background-color;
   border: $base-border;
-  margin: 0 0 $small-spacing;
-  padding: $base-spacing;
+  @include horizontal-borders;
+  padding: {
+    left: rhythm();
+    right: rhythm()
+  }
+  @include margin-trailer;
 }
 
 input,
@@ -15,7 +26,6 @@ select {
 
 label {
   font-weight: 600;
-  margin-bottom: $small-spacing / 2;
 
   &.required::after {
     content: "*";
@@ -28,15 +38,19 @@ label {
 
 #{$all-text-inputs},
 select[multiple=multiple] {
+  line-height: rhythm($offset: 2);
   background-color: $base-background-color;
   border: $base-border;
+  @include margin-trailer;
+  padding: {
+    left: .5em;
+    right: .5em;
+  }
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
@@ -62,6 +76,8 @@ select[multiple=multiple] {
 
 textarea {
   resize: vertical;
+  height: rhythm(4);
+  display: block; // To remove bottom margin.
 }
 
 input[type="search"] {
@@ -71,7 +87,7 @@ input[type="search"] {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  margin-right: $small-spacing / 2;
+  margin-right: .5em;
 
   + label {
     display: inline-block;
@@ -79,12 +95,15 @@ input[type="radio"] {
 }
 
 input[type="file"] {
-  margin-bottom: $small-spacing;
+  @include margin-trailer;
   width: 100%;
 }
 
 select {
-  margin-bottom: $base-spacing;
+  height: rhythm();
+  @include margin-trailer;
+  @include adjust-leading-to(1);
   max-width: 100%;
   width: auto;
+  background: white;
 }
