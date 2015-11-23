@@ -1,7 +1,25 @@
+aside {
+  @include rhythm-padding;
+  background: white;
+  @include card(4);
+
+  menu {
+    list-style: none;
+  }
+  li:hover {
+    background: rgba(black, .05);
+  }
+  a {
+    display: block;
+    @include adjust-leading-to(2);
+    text-indent: 1em;
+    font-weight: bold;
+    color: $base-font-color;
+  }
+}
 
 @include breakpoint($break-large) {
   aside {
     @include card;
   }
 }
-
