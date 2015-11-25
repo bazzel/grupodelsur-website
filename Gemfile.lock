@@ -8,6 +8,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     ansi (1.5.0)
+    autoprefixer-rails (6.0.2)
+      execjs
+      json
     bitters (1.1.0)
       bourbon (>= 4.2)
       sass (>= 3.4)
@@ -92,6 +95,9 @@ GEM
       middleman-sprockets (>= 3.1.2)
       sass (>= 3.4.0, < 4.0)
       uglifier (~> 2.5)
+    middleman-autoprefixer (2.6.0)
+      autoprefixer-rails (~> 6.0.1)
+      middleman-core (>= 3.3.3)
     middleman-core (3.4.0)
       activesupport (~> 4.1)
       bundler (~> 1.1)
@@ -187,6 +193,7 @@ DEPENDENCIES
   bitters
   breakpoint
   middleman (~> 3.4.0)
+  middleman-autoprefixer
   middleman-livereload (~> 3.1.0)
   middleman-s3_sync (= 3.3.4)
   modular-scale

@@ -1,0 +1,4 @@
+.content-box {
+  @include card;
+  padding: rhythm() 1em;
+}

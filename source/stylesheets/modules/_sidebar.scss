@@ -1,0 +1,36 @@
+aside {
+  @include rhythm-padding(3, 1);
+  background: white;
+  @include card(4);
+
+  menu {
+    list-style: none;
+  }
+  li {
+    &:hover {
+      background: rgba(black, .05);
+    }
+    &.active {
+      background: rgba(black, .8);
+      a {
+        color: white;
+      }
+    }
+    a {
+      padding-left: 1em;
+    }
+  }
+  a {
+    display: block;
+    @include adjust-leading-to(2);
+    font-weight: bold;
+    color: $base-font-color;
+  }
+}
+
+@include breakpoint($break-large) {
+  aside {
+    @include rhythm-padding;
+    @include card;
+  }
+}

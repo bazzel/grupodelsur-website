@@ -81,3 +81,7 @@ activate :s3_sync do |s3_sync|
   s3_sync.aws_access_key_id          = 'AWS KEY ID'
   s3_sync.aws_secret_access_key      = 'AWS SECRET KEY'
 end
+
+activate :autoprefixer do |config|
+    config.browsers = ['last 2 versions', 'Explorer >= 9']
+end

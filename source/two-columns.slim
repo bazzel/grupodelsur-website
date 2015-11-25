@@ -3,12 +3,9 @@
     a.open-menu href='#nav' ☰
     = image_tag lorem.image('350x90')
 
-  aside#nav
-    a.close-menu href='#' ☰
-    menu
-      = partial 'nav'
+  = partial 'sidebar'
 
-  section.content
+  section.content.content-box
     - 3.times do
       article
         h2 = lorem.words rand(2...5)
