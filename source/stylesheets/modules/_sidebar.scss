@@ -1,5 +1,5 @@
 aside {
-  @include rhythm-padding;
+  @include rhythm-padding(3, 1);
   background: white;
   @include card(4);
 
@@ -16,11 +16,13 @@ aside {
         color: white;
       }
     }
+    a {
+      padding-left: 1em;
+    }
   }
   a {
     display: block;
     @include adjust-leading-to(2);
-    text-indent: 1em;
     font-weight: bold;
     color: $base-font-color;
   }
@@ -28,6 +30,7 @@ aside {
 
 @include breakpoint($break-large) {
   aside {
+    @include rhythm-padding;
     @include card;
   }
 }
