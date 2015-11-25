@@ -15,7 +15,38 @@ aside {
     text-indent: 1em;
     font-weight: bold;
     color: $base-font-color;
+    position: relative; // ripple
+    overflow: hidden; // ripple
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      top: calc(50% - 1px);
+      left: calc(50% - 1px);
+      pointer-events: none;
+      width: 2px;
+      height: 2px;
+      background: rgba(black, .3);
+      /*background: rgba(white, .3);*/
+      opacity: 0;
+    }
+    &:active::after, &:focus::after {
+      animation: {
+        name: ripple;
+        duration: 4s;
+        timing-function: ease;
+        fill-mode: none;
+      }
+    }
   }
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 1; }
+  25% { transform: scale(100); opacity: 0; }
+  100% { transform: scale(100); opacity: 0; }
 }
 
 @include breakpoint($break-large) {
