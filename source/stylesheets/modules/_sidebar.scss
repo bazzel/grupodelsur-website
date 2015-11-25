@@ -15,8 +15,6 @@ aside {
     text-indent: 1em;
     font-weight: bold;
     color: $base-font-color;
-
-    @include ripple(dark);
   }
 }
 
