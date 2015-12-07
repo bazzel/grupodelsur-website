@@ -6,7 +6,7 @@ header {
   @include full;
 }
 
-#nav {
+aside {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -53,8 +53,6 @@ header {
   }
   aside {
     @include span(4);
-  }
-  #nav {
     position: static;
     transform: none;
   }
