@@ -65,7 +65,7 @@ p {
 a {
   color: $action-color;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
+  /*transition: color $base-duration $base-timing;*/
 
   &:active,
   &:focus,

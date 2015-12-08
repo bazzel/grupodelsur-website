@@ -32,5 +32,29 @@ aside {
   aside {
     @include rhythm-padding;
     @include card;
+    background: $content-box-bg-color;
+    #{headings()} {
+      text-shadow: $content-box-text-shadow;
+    }
+
+    li {
+      &:hover {
+        background: $sidebar-hover-bg-color;
+        a {
+          color: $sidebar-hover-color;;
+        }
+      }
+      &.active {
+        background: $sidebar-bg-color;
+        a {
+          &:hover {
+            color: $sidebar-color;
+          }
+        }
+      }
+    }
+    a {
+      color: $sidebar-color;
+    }
   }
 }

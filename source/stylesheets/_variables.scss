@@ -47,6 +47,7 @@ $header-margin-bottom    : 1;
 
 
 // Colors
+$primary-color: hsl(13, 28%, 50%);
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
@@ -55,6 +56,17 @@ $light-gray: #ddd;
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
+
+$body-bg-color: $primary-color;
+$body-color: white;
+
+$content-box-bg-color: rgba(white, .3);
+$content-box-text-shadow: 0 2px 2px rgba(black, .4);
+
+$sidebar-color: white;
+$sidebar-bg-color: $primary-color;
+$sidebar-hover-color: $dark-gray;
+$sidebar-hover-bg-color: white;
 
 // Border
 $base-border-color: $light-gray;

@@ -4,12 +4,22 @@
 
 .open-menu, .close-menu {
   font-size: ms(4);
-  color: black;
   font-weight: bold;
   @include adjust-leading-to(1, $base-font-size);
   position: absolute;
   top: 0;
   left: em($base-font-size, ms(4));
+}
+
+.open-menu {
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.close-menu {
+  color: black;
   &:hover {
     color: black;
   }

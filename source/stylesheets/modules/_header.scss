@@ -1,3 +1,16 @@
 header {
-  height: rhythm(5);
+  height: rhythm(17);
+  background: {
+    image: image-url('grupo-del-sur.jpg');
+    size: 100%;
+    repeat: no-repeat;
+  }
+  position: relative;
+
+  .logo {
+    position: absolute;
+    right: 1em;
+    bottom: rhythm(2);
+    height: 6em;
+  }
 }
