@@ -19,3 +19,8 @@
 
 .ruby-version
 .s3_sync
+.env
+.website-space-hash
+
+!data/*.yml
+/data/website/**

@@ -7,6 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     ansi (1.5.0)
     autoprefixer-rails (6.0.2)
       execjs
@@ -45,6 +46,17 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    contentful (0.8.0)
+      http (~> 0.8)
+      multi_json (~> 1)
+    contentful-webhook-listener (0.1.0)
+    contentful_middleman (1.2.0)
+      contentful (~> 0.8)
+      contentful-webhook-listener (~> 0.1)
+      middleman-core (~> 3.3)
+    domain_name (0.5.25)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (1.0.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -75,6 +87,14 @@ GEM
     hike (1.2.3)
     hooks (0.4.1)
       uber (~> 0.0.14)
+    http (0.9.8)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     ipaddress (0.8.0)
@@ -110,6 +130,9 @@ GEM
       rack (>= 1.4.5, < 2.0)
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.4.1, < 2.0)
+    middleman-dotenv (1.1.1)
+      dotenv (~> 1.0)
+      middleman-core (>= 3.2)
     middleman-livereload (3.1.1)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -192,8 +215,10 @@ PLATFORMS
 DEPENDENCIES
   bitters
   breakpoint
+  contentful_middleman
   middleman (~> 3.4.0)
   middleman-autoprefixer
+  middleman-dotenv
   middleman-livereload (~> 3.1.0)
   middleman-s3_sync (= 3.3.4)
   modular-scale
