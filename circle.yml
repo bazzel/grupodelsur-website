@@ -1,5 +1,9 @@
+dependencies:
+  pre:
+    - bundle exec middleman contentful
 deployment:
   production:
-    branch: master
+    #branch: master
+    branch: feature-contentful
     commands:
       - bundle exec middleman s3_sync
