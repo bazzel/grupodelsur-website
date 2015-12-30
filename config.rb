@@ -99,3 +99,10 @@ activate :contentful do |f|
     musicians: 'musicians'
   }
 end
+
+if data['website']
+  @musicians = data.website.musicians.
+                 values.
+                 select(&:active).
+                 sort_by(&:position)
+end

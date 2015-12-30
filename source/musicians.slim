@@ -1,0 +1,8 @@
+.container
+  = partial 'header'
+  = partial 'sidebar'
+
+  section.content.content-box
+    ul
+      - @musicians.each do |musician|
+        li= musician.name
