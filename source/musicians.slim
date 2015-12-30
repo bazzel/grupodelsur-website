@@ -3,6 +3,5 @@
   = partial 'sidebar'
 
   section.content.content-box
-    ul
-      - @musicians.each do |musician|
-        li= musician.name
+    - @musicians.each do |musician|
+      = partial 'musician', locals: { musician: musician }

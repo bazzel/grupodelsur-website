@@ -1,0 +1,5 @@
+.musician
+  img.musician-image[src=musician.image.url]
+  .musician-details
+    h3= [musician.name, musician.instrument].join(' - ')
+    .musician-biography= Kramdown::Document.new(musician.biography).to_html

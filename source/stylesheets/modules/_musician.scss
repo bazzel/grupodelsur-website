@@ -1,0 +1,10 @@
+.musician {
+  img {
+    float: left;
+    width: 10em;
+    @include leader(2);
+  }
+  .musician-details {
+    padding-left: 11em;
+  }
+}
