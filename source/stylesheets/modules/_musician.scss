@@ -1,9 +1,11 @@
 .musician {
+  @include clearfix;
   img {
+    @include leader(2);
     float: left;
     width: 10em;
-    @include leader(2);
   }
+
   .musician-details {
     padding-left: 11em;
   }
