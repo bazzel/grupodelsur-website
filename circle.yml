@@ -1,5 +1,5 @@
 dependencies:
-  pre:
+  post:
     - bundle exec middleman contentful
 deployment:
   production:
