@@ -1,11 +1,28 @@
 header {
-  height: rhythm(17);
+  height: rhythm(10);
   position: relative;
 
   .logo {
     position: absolute;
-    right: 1em;
-    bottom: rhythm(2);
-    height: 6em;
+    right: 0;
+    bottom: rhythm(1);
+    height: 4em;
+  }
+
+  @include susy-breakpoint($break-medium) {
+    height: rhythm(12);
+
+    .logo {
+      height: 6em;
+    }
+  }
+
+  @include susy-breakpoint($break-large) {
+    height: rhythm(17);
+
+    .logo {
+      right: 1em;
+      bottom: rhythm(2);
+    }
   }
 }
