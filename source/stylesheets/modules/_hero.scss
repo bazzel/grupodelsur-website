@@ -1,7 +1,7 @@
 .hero {
   background: {
     image: image-url('grupo-del-sur.png');
-    size: 100%;
+    size: contain;
     repeat: no-repeat;
   }
   z-index: -1;
