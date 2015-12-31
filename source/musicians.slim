@@ -1,7 +1,3 @@
-.container
-  = partial 'header'
-  = partial 'sidebar'
-
-  section.content.content-box
-    - @musicians.each do |musician|
-      = partial 'musician', locals: { musician: musician }
+section.content.content-box
+  - @musicians.each do |musician|
+    = partial 'musician', locals: { musician: musician }
