@@ -1,0 +1,8 @@
+- content_for(:description, page.description)
+- content_for(:title, page.title)
+- content_for(:featured_image_url, page.featuredImage.url) if page.featuredImage
+
+section.content.content-box
+  h1= page.title
+  - @musicians.each do |musician|
+    = partial 'musician', locals: { musician: musician }

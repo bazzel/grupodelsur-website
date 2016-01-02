@@ -3,15 +3,20 @@ html.no-js lang=""
   head
     meta charset="utf-8" /
     meta content="ie=edge" http-equiv="x-ua-compatible" /
-    title
     meta content="" name="description" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
+    meta[content=(current_page.data.description || yield_content(:description) || data.config.description) name="description"]
+    title= [data.config.site_title, current_page.data.title, yield_content(:title)].compact.join(' - ')
     link href="apple-touch-icon.png" rel="apple-touch-icon" /
     /! Place favicon.ico in the root directory
     = stylesheet_link_tag 'main'
   body
     /![if lt IE 8]
       | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p
-    = yield
+    = partial 'hero', locals: { featured_image_url: yield_content(:featured_image_url) }
+    .container
+      = partial 'header'
+      = partial 'sidebar'
+      = yield
     = javascript_include_tag 'all'
     = partial 'ga', locals: { tracking_id: data.config.tracking_id }

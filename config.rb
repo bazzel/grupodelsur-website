@@ -83,3 +83,34 @@ end
 activate :autoprefixer do |config|
     config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
+
+# https://github.com/middleman-contrib/middleman-dotenv
+# Dotenv for Middleman
+# Loads environment variables from `.env`
+#
+# Activate before using any ENV defined in `.env`
+activate :dotenv
+
+activate :contentful do |f|
+  f.space         = { website: 'y39ktgmrw5l4' }
+  f.access_token  = ENV['GRUPO_DEL_SUR_WEBSITE_ACCESS_TOKEN']
+  f.cda_query     = { limit: 1000 }
+  f.content_types = {
+    musicians: 'musicians',
+    pages:     'pages'
+  }
+end
+
+if data['website']
+  @musicians = data.website.musicians.
+                 values.
+                 select(&:active).
+                 sort_by(&:position)
+
+  data.website.pages.values.each do |page|
+    proxy "#{page.slug}.html", "templates/#{page.slug}.html", locals: { page: page }, ignore: true
+  end
+
+
+
+end
