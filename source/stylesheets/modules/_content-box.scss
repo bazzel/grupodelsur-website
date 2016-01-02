@@ -6,4 +6,12 @@
   #{headings()} {
     text-shadow: $content-box-text-shadow;
   }
+
+  h1 {
+    text-align: center;
+
+    @include susy-breakpoint($break-large) {
+      display: none;
+    }
+  }
 }

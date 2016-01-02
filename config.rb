@@ -96,7 +96,8 @@ activate :contentful do |f|
   f.access_token  = ENV['GRUPO_DEL_SUR_WEBSITE_ACCESS_TOKEN']
   f.cda_query     = { limit: 1000 }
   f.content_types = {
-    musicians: 'musicians'
+    musicians: 'musicians',
+    pages:     'pages'
   }
 end
 
@@ -105,4 +106,11 @@ if data['website']
                  values.
                  select(&:active).
                  sort_by(&:position)
+
+  data.website.pages.values.each do |page|
+    proxy "#{page.slug}.html", "templates/#{page.slug}.html", locals: { page: page }, ignore: true
+  end
+
+
+
 end
