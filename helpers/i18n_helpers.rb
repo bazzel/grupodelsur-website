@@ -5,4 +5,12 @@ module I18nHelpers
 
     value ||= object[attr]
   end
+
+  def local_path(path)
+    if I18n.locale == I18n.default_locale
+      path
+    else
+      t(path, scope: :paths)
+    end
+  end
 end
