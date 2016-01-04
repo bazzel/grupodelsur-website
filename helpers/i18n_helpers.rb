@@ -8,9 +8,9 @@ module I18nHelpers
 
   def local_path(path)
     if I18n.locale == I18n.default_locale
-      path
+      "/#{path}"
     else
-      t(path, scope: :paths)
+      "/#{I18n.locale}/#{t(path, scope: :paths)}"
     end
   end
 end
