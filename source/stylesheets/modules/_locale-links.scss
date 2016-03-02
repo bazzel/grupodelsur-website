@@ -1,0 +1,44 @@
+.locale-links {
+  @include horizontal-list;
+  float: right;
+  margin: {
+    top: rhythm($offset: $locale-links-border-width);
+    bottom: rhythm($offset: $locale-links-border-width);
+  }
+}
+
+[class^="flag-icon-"] {
+  $padding: 4px;
+
+  color: $locale-links-color;
+  background: {
+    repeat: no-repeat;
+    position-x: $padding;
+  }
+  padding: {
+    right: $padding;
+    left: 2 * $padding + image-width('flags/NL.png');
+  }
+  display: block;
+  // Vertical rhythm can't help us here :(
+  border: $locale-links-border-width solid $locale-links-border-color;
+  border-radius: 2px;
+
+  &.active {
+    background-color: $locale-links-bg-color;
+  }
+  &:not(.active) {
+    &:hover {
+      background-color: $locale-links-hover-bg-color;
+      color: $locale-links-hover-color;
+    }
+  }
+}
+
+.flag-icon-nl {
+  background-image: inline-image('flags/NL.png');
+}
+
+.flag-icon-en {
+  background-image: inline-image('flags/GB.png');
+}

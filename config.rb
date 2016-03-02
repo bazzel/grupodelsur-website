@@ -73,6 +73,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+activate :i18n, mount_at_root: :nl
 activate :directory_indexes
 
 activate :s3_sync do |s3_sync|
@@ -106,11 +107,4 @@ if data['website']
                  values.
                  select(&:active).
                  sort_by(&:position)
-
-  data.website.pages.values.each do |page|
-    proxy "#{page.slug}.html", "templates/#{page.slug}.html", locals: { page: page }, ignore: true
-  end
-
-
-
 end
