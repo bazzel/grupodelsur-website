@@ -1,0 +1,10 @@
+- page = find_page 'musici'
+
+- content_for(:description, i18n(page, :description))
+- content_for(:title, i18n(page, :title))
+- content_for(:featured_image_url, page.featuredImage.url) if page.featuredImage
+
+section.content.content-box
+  h1= i18n(page, :title)
+  - @musicians.each do |musician|
+    = partial 'musician', locals: { musician: musician }
