@@ -81,6 +81,8 @@ activate :s3_sync do |s3_sync|
   s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
 end
 
+default_caching_policy max_age:(60 * 60 * 24 * 365) # https://github.com/fredjean/middleman-s3_sync#setting-a-default-policy
+
 activate :autoprefixer do |config|
     config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
