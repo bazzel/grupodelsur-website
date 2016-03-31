@@ -11,7 +11,7 @@
 
   @include susy-breakpoint($break-medium) {
     .musician-image {
-      @include leader(2);
+      margin-top: rhythm(0.5);
       float: left;
       width: 10em;
       height: auto;
@@ -20,6 +20,11 @@
 
     .musician-details {
       padding-left: 11em;
+    }
+
+    .musician-instrument {
+      color: $primary-color;
+      font-style: italic;
     }
   }
 }
