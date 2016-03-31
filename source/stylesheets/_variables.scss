@@ -1,25 +1,21 @@
 // Vertical Rhythm
-// $base-font-size: 16px;
-$base-line-height: 26px;
+$base-font-size: 18px;
+$base-line-height: 27px;
 // $rhythm-unit: 'em';
 
-// Google fonts
-//
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono|Milonga|Open+Sans:400,300,300italic,400italic,600,600italic);
-$serif-font-family       : 'Milonga', cursive;
-$sans-serif-font-family  : 'Open Sans', sans-serif;
-$monospace-font-family   : 'Ubuntu Mono', Courier, monospace;
+$sans-serif-font-family  : 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+$monospace-font-family   : Courier, monospace;
 
 // Typography
 $base-font-family: $sans-serif-font-family;
-$heading-font-family: $serif-font-family;
+$heading-font-family: $sans-serif-font-family;
 
 // Font Sizes
 
 // Modular Scale
 //
 // https://github.com/at-import/modular-scale
-$ms-ratio                : $fifth; // https://github.com/at-import/modular-scale#ratios
+$ms-ratio                : $major-third; // https://github.com/at-import/modular-scale#ratios
 $ms-base                 : $base-font-size $base-line-height;
 //
 // End Modular Scale
@@ -108,8 +104,8 @@ $susy: (
 
 // Media query
 //
-$break-medium: 40em;
-$break-large: 60em;
+$break-medium: 640px;
+$break-large: 960px;
 
 // Buttons
 //

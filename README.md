@@ -31,3 +31,7 @@ This project uses [Middleman::S3Sync](https://github.com/fredjean/middleman-s3_s
 ~~~
 
 * edit the S3 credentials in `.s3_sync`
+
+## And...
+
+* Flag Icons by [GoSquared](http://www.gosquared.com/)
