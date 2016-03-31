@@ -43,7 +43,7 @@ $header-margin-bottom    : 1;
 
 
 // Colors
-$primary-color: hsl(13, 28%, 50%);
+$primary-color: hsl(336, 69%, 21%);
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
@@ -51,24 +51,23 @@ $light-gray: #ddd;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $primary-color;
 
-$body-bg-color: $primary-color;
-$body-color: white;
+$body-color: $base-font-color;
 
-$content-box-bg-color: rgba(white, .3);
-$content-box-text-shadow: 0 2px 2px rgba(black, .4);
+$content-box-bg-color: rgba(white, .78);
+$content-box-text-shadow: 0 1px 1px rgba(black, .4);
 
 $sidebar-color: white;
-$sidebar-bg-color: $primary-color;
+$sidebar-bg-color: white;
 $sidebar-hover-color: $dark-gray;
 $sidebar-hover-bg-color: white;
 
 $locale-links-color: white;
-$locale-links-bg-color: $primary-color;
-$locale-links-hover-color: $dark-gray;
-$locale-links-hover-bg-color: white;
-$locale-links-border-color: rgba(white, .3);
+$locale-links-bg-color: transparentize($primary-color, .5);
+$locale-links-hover-color: white;
+$locale-links-hover-bg-color: $primary-color;
+$locale-links-border-color: $primary-color;
 $locale-links-border-width: 1px;
 
 // Border

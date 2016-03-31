@@ -14,17 +14,24 @@ aside {
       background: rgba(black, .8);
       a {
         color: white;
+        &:hover {
+          background: transparent;
+        }
       }
     }
     a {
       padding-left: 1em;
+      text-decoration: none;
     }
   }
   a {
     display: block;
     @include adjust-leading-to(2);
-    font-weight: bold;
     color: $base-font-color;
+    &:hover {
+      background: $sidebar-hover-bg-color;
+      color: $sidebar-hover-color;
+    }
   }
 }
 
@@ -40,21 +47,21 @@ aside {
     li {
       &:hover {
         background: $sidebar-hover-bg-color;
-        a {
-          color: $sidebar-hover-color;;
-        }
       }
       &.active {
         background: $sidebar-bg-color;
+        font-weight: bold;
         a {
+          color: $base-font-color;
           &:hover {
-            color: $sidebar-color;
+            cursor: default;
+            /*color: $sidebar-color;*/
           }
         }
       }
     }
     a {
-      color: $sidebar-color;
+      color: $body-color;
     }
   }
 }

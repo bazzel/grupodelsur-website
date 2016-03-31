@@ -3,9 +3,6 @@
   padding: rhythm() 1em;
 
   background: $content-box-bg-color;
-  #{headings()} {
-    text-shadow: $content-box-text-shadow;
-  }
 
   h1 {
     text-align: center;
