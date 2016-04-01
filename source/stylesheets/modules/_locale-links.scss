@@ -28,6 +28,9 @@
     background-color: $locale-links-bg-color;
   }
   &:not(.active) {
+    background-color: $locale-links-color;
+    color: $locale-links-border-color;
+    text-decoration: none;
     &:hover {
       background-color: $locale-links-hover-bg-color;
       color: $locale-links-hover-color;

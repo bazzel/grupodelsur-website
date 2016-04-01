@@ -32,11 +32,11 @@ button  {
 
 h1 {
   @include adjust-font-size-to($h1-font-size);
-  @include rhythm($header-margin-top, 0, 0, $header-margin-bottom, $h1-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h1-font-size);
 }
 h2 {
   @include adjust-font-size-to($h2-font-size);
-  @include rhythm($header-margin-top, 0, 0, $header-margin-bottom, $h2-font-size);
+  @include rhythm($header-margin-top, 0, 0, 0, $h2-font-size);
 }
 h3 {
   @include adjust-font-size-to($h3-font-size);
@@ -65,13 +65,13 @@ p {
 
 a {
   color: $action-color;
-  text-decoration: none;
-  /*transition: color $base-duration $base-timing;*/
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: white;
+    background-color: $action-color;
+    text-decoration: none;
   }
 }
 

@@ -8,19 +8,16 @@
   @include adjust-leading-to(1, $base-font-size);
   position: absolute;
   top: 0;
-}
-
-.open-menu {
-  color: white;
+  text-decoration: none;
+  color: black;
+  &:active,
+  &:focus,
   &:hover {
-    color: white;
+    color: black;
+    background-color: initial;
   }
 }
 
 .close-menu {
-  color: black;
   left: em($base-font-size, ms(4));
-  &:hover {
-    color: black;
-  }
 }
