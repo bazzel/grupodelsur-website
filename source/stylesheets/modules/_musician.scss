@@ -1,13 +1,17 @@
 .musician {
   @include clearfix;
-    .musician-image {
-      height: rhythm(5);
-      overflow: hidden;
-      width: rhythm(5);
-      border-radius: 50%;
-      margin: 0 auto;
-    }
+  .musician-image {
+    height: rhythm(5);
+    overflow: hidden;
+    width: rhythm(5);
+    border-radius: 50%;
+    margin: rhythm(1) auto;
+  }
 
+  .musician-instrument {
+    color: $primary-color;
+    font-style: italic;
+  }
 
   @include susy-breakpoint($break-medium) {
     .musician-image {
@@ -22,9 +26,5 @@
       padding-left: 11em;
     }
 
-    .musician-instrument {
-      color: $primary-color;
-      font-style: italic;
-    }
   }
 }

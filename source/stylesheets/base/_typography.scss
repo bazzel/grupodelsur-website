@@ -39,7 +39,7 @@ h2 {
   @include rhythm($header-margin-top, 0, 0, 0, $h2-font-size);
 }
 h3 {
-  @include adjust-font-size-to($h3-font-size);
+  @include adjust-font-size-to($h3-font-size, 1);
   @include rhythm($header-margin-top, 0, 0, 0, $h3-font-size);
 }
 h4 {

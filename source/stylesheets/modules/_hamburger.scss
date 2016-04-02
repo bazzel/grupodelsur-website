@@ -3,11 +3,10 @@
 }
 
 .open-menu, .close-menu {
-  font-size: ms(4);
+  @include adjust-font-size-to(ms(4), 1);
   font-weight: bold;
-  @include adjust-leading-to(1, $base-font-size);
   position: absolute;
-  top: 0;
+  top: 1em;
   text-decoration: none;
   color: black;
   &:active,
