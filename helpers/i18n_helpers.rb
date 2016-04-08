@@ -19,7 +19,8 @@ module I18nHelpers
 
     #other_langs = langs.reject { |l| l == I18n.locale }
 
-    content = langs.reduce('') do |text, locale|
+    # When a *.yml file is opened, MM adds *.yml.swp as a locale entry. Strange...
+    content = langs.reject { |l| l =~ /\.swp$/ }.reduce('') do |text, locale|
       text << content_tag(:li, locale_link(locale, current_page))
     end
 

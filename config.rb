@@ -100,7 +100,8 @@ activate :contentful do |f|
   f.cda_query     = { limit: 1000 }
   f.content_types = {
     musicians: 'musicians',
-    pages:     'pages'
+    pages:     'pages',
+    news:      'news'
   }
 end
 

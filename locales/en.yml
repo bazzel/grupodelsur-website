@@ -1,6 +1,8 @@
 ---
 en:
   musicians: Musicians
+  news: News
   paths:
     musici: musicians
     two-columns: two-columns
+    nieuws: news

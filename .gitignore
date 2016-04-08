@@ -24,3 +24,5 @@
 
 !data/*.yml
 /data/website/**
+
+*.swp

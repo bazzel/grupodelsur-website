@@ -1,0 +1,13 @@
+- page = find_page 'news'
+
+- content_for(:description, i18n(page, :description))
+- content_for(:title, i18n(page, :title))
+
+section.content.content-box
+  h1= i18n(page, :title)
+  - 3.times do
+    article
+      h2 = lorem.words rand(2...5)
+      h3 = lorem.words rand(2...5)
+      - 3.times do
+        p = lorem.paragraph
