@@ -15,9 +15,7 @@ module I18nHelpers
   end
 
   def locale_links
-    return unless current_page.locale_root_path
-
-    #other_langs = langs.reject { |l| l == I18n.locale }
+    return if current_page.file_descriptor.full_path.to_s !~ /localizable/
 
     content = langs.reduce('') do |text, locale|
       text << content_tag(:li, locale_link(locale, current_page))
@@ -33,10 +31,9 @@ module I18nHelpers
       content_tag(:span, locale, class: [classname, 'active'].join(' '))
     else
       I18n.with_locale(locale) do
-        path = File.basename(current_page.locale_root_path, current_page.ext)
+        path = File.basename(current_page.target, current_page.ext)
         link_to(locale, local_path(path), class: classname)
       end
     end
-
   end
 end

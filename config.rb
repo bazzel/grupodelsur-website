@@ -1,5 +1,6 @@
 require 'susy'
 require 'modular-scale'
+require 'bourbon'
 
 ###
 # Compass
@@ -50,11 +51,6 @@ end
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
-set :partials_dir, 'partials'
-
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -75,6 +71,7 @@ end
 
 activate :i18n, mount_at_root: :nl
 activate :directory_indexes
+activate :sprockets
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'grupodelsur' # The name of the S3 bucket you are targetting. This is globally unique.
@@ -102,11 +99,4 @@ activate :contentful do |f|
     musicians: 'musicians',
     pages:     'pages'
   }
-end
-
-if data['website']
-  @musicians = data.website.musicians.
-                 values.
-                 select(&:active).
-                 sort_by(&:position)
 end

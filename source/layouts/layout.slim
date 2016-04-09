@@ -12,10 +12,10 @@ html.no-js lang=""
   body
     /![if lt IE 8]
       | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p
-    = partial 'hero', locals: { featured_image_url: yield_content(:featured_image_url) }
+    = partial 'partials/hero', locals: { featured_image_url: yield_content(:featured_image_url) }
     .container
-      = partial 'header'
-      = partial 'sidebar'
+      = partial 'partials/header'
+      = partial 'partials/sidebar'
       = yield
     = javascript_include_tag 'all'
-    = partial 'ga', locals: { tracking_id: data.config.tracking_id }
+    = partial 'partials/ga', locals: { tracking_id: data.config.tracking_id }
