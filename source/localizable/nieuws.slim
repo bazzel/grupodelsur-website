@@ -5,9 +5,9 @@
 
 section.content.content-box
   h1= i18n(page, :title)
-  - 3.times do
+  - @news.each do |item|
     article
-      h2 = lorem.words rand(2...5)
-      h3 = lorem.words rand(2...5)
-      - 3.times do
-        p = lorem.paragraph
+      h2= link_to i18n(item, :title), "#{local_path('nieuws')}/#{i18n(item, :slug)}"
+      = I18n.l(Date.parse(item.createdOn.to_s), format: :long)
+      = Kramdown::Document.new(i18n(item, :summary)).to_html
+      = link_to "#{t(:read_more)}...", i18n(item, :slug)

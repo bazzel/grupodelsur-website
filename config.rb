@@ -1,6 +1,9 @@
 require 'susy'
 require 'modular-scale'
 
+require "helpers/i18n_helpers"
+helpers I18nHelpers
+
 ###
 # Compass
 ###
@@ -73,7 +76,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :i18n, mount_at_root: :nl
+activate :i18n, mount_at_root: :nl, langs: [:nl, :en]
 activate :directory_indexes
 
 activate :s3_sync do |s3_sync|
@@ -105,9 +108,23 @@ activate :contentful do |f|
   }
 end
 
-if data['website']
-  @musicians = data.website.musicians.
-                 values.
-                 select(&:active).
-                 sort_by(&:position)
+after_configuration do
+  if data['website']
+    @musicians = data.website.musicians.
+                   values.
+                   select(&:active).
+                   sort_by(&:position)
+    @news = data.website.news.values.sort_by(&:createdOn).reverse
+
+    langs.each do |lang|
+      I18n.with_locale lang do
+        @news.each do |item|
+          proxy "#{local_path('nieuws', lang)}/#{i18n(item, :slug)}.html",
+                  'news-item.html',
+                  locals: { item: item },
+                  ignore: true
+        end
+      end
+    end
+  end
 end

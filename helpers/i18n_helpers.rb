@@ -6,11 +6,11 @@ module I18nHelpers
     value ||= object[attr]
   end
 
-  def local_path(path)
-    if I18n.locale == I18n.default_locale
+  def local_path(path, locale = I18n.locale)
+    if locale == I18n.default_locale
       "/#{path}"
     else
-      "/#{I18n.locale}/#{t(path, scope: :paths)}"
+      "/#{I18n.locale}/#{I18n.t(path, scope: :paths)}"
     end
   end
 
@@ -19,8 +19,7 @@ module I18nHelpers
 
     #other_langs = langs.reject { |l| l == I18n.locale }
 
-    # When a *.yml file is opened, MM adds *.yml.swp as a locale entry. Strange...
-    content = langs.reject { |l| l =~ /\.swp$/ }.reduce('') do |text, locale|
+    content = langs.each do |text, locale|
       text << content_tag(:li, locale_link(locale, current_page))
     end
 
