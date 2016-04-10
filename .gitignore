@@ -25,4 +25,5 @@
 !data/*.yml
 /data/website/**
 
+.byebug_history
 *.swp

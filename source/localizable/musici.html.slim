@@ -6,5 +6,5 @@
 
 section.content.content-box
   h1= i18n(page, :title)
-  - @musicians.each do |musician|
-    = partial 'musician', locals: { musician: musician }
+  - musicians.each do |musician|
+    = partial 'partials/musician', locals: { musician: musician }
