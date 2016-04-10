@@ -105,19 +105,19 @@ activate :contentful do |f|
   }
 end
 
-after_configuration do
-  if data['website']
-    @news = data.website.news.values.sort_by(&:createdOn).reverse
+#after_configuration do
+  #if data['website']
+    #@news = data.website.news.values.sort_by(&:createdOn).reverse
 
-    langs.each do |lang|
-      I18n.with_locale lang do
-        @news.each do |item|
-          proxy "#{local_path('nieuws', lang)}/#{i18n(item, :slug)}.html",
-                  'news-item.html',
-                  locals: { item: item },
-                  ignore: true
-        end
-      end
-    end
-  end
-end
+    #langs.each do |lang|
+      #I18n.with_locale lang do
+        #@news.each do |item|
+          #proxy "#{local_path('nieuws', lang)}/#{i18n(item, :slug)}.html",
+                  #'news-item.html',
+                  #locals: { item: item },
+                  #ignore: true
+        #end
+      #end
+    #end
+  #end
+#end
