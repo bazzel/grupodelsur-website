@@ -2,9 +2,6 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
-require "helpers/i18n_helpers"
-helpers I18nHelpers
-
 ###
 # Compass
 ###
@@ -105,19 +102,22 @@ activate :contentful do |f|
   }
 end
 
-#after_configuration do
-  #if data['website']
-    #@news = data.website.news.values.sort_by(&:createdOn).reverse
+%i(nl en).each do |locale|
+  I18n.with_locale(locale) do
+    data.website.news.each do |k, item|
+      if locale == I18n.default_locale
+        path = '/nieuws'
+        filename = item.slug
+      else
+        path = "#{locale}/#{I18n.t(:nieuws, scope: :paths, locale: locale)}"
+        filename = item["slug#{locale.to_s.camelize}"]
+      end
 
-    #langs.each do |lang|
-      #I18n.with_locale lang do
-        #@news.each do |item|
-          #proxy "#{local_path('nieuws', lang)}/#{i18n(item, :slug)}.html",
-                  #'news-item.html',
-                  #locals: { item: item },
-                  #ignore: true
-        #end
-      #end
-    #end
-  #end
-#end
+      proxy "#{path}/#{filename}/index.html",
+                'localizable/news-item.html',
+                locals: { item: item },
+                ignore: true,
+                lang: locale
+    end
+  end
+end
