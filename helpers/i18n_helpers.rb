@@ -15,7 +15,7 @@ module I18nHelpers
   end
 
   def locale_links
-    return if current_page.file_descriptor.full_path.to_s !~ /localizable/
+    return unless file_is_localizable?
 
     content = langs.reduce('') do |text, locale|
       text << content_tag(:li, locale_link(locale, current_page))
@@ -35,5 +35,9 @@ module I18nHelpers
         link_to(locale, local_path(path), class: classname)
       end
     end
+  end
+
+  def file_is_localizable?
+    current_page.target =~ /[localizable|templates]/
   end
 end

@@ -12,7 +12,7 @@ html.no-js lang=""
   body
     /![if lt IE 8]
       | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p
-    = partial 'partials/hero', locals: { featured_image_url: yield_content(:featured_image_url) }
+    = partial 'partials/hero'
     .container
       = partial 'partials/header'
       = partial 'partials/sidebar'
