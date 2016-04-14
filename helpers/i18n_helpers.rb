@@ -17,7 +17,7 @@ module I18nHelpers
   def locale_links
     return if current_page.file_descriptor.full_path.to_s !~ /localizable/
 
-    content = langs.each do |text, locale|
+    content = langs.reduce('') do |text, locale|
       text << content_tag(:li, locale_link(locale, current_page))
     end
 
