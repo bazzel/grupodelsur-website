@@ -105,16 +105,17 @@ end
 %i(nl en).each do |locale|
   I18n.with_locale(locale) do
     data.website.news.each do |k, item|
-      if locale == I18n.default_locale
-        path = '/nieuws'
-        filename = item.slug
+      path, filename = if locale == I18n.default_locale
+        ['/nieuws', item.slug]
       else
-        path = "#{locale}/#{I18n.t(:nieuws, scope: :paths, locale: locale)}"
-        filename = item["slug#{locale.to_s.camelize}"]
+        [
+          "#{locale}/#{I18n.t(:nieuws, scope: :paths, locale: locale)}",
+          item["slug#{locale.to_s.camelize}"]
+        ]
       end
 
       proxy "#{path}/#{filename}/index.html",
-                'localizable/news-item.html',
+                'templates/news-item.html',
                 locals: { item: item },
                 ignore: true,
                 lang: locale
