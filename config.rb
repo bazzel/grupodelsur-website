@@ -69,7 +69,8 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :i18n, mount_at_root: :nl, langs: [:nl, :en]
+langs = %i(nl en)
+activate :i18n, mount_at_root: :nl, langs: langs
 activate :directory_indexes
 activate :sprockets
 
@@ -102,7 +103,7 @@ activate :contentful do |f|
   }
 end
 
-%i(nl en).each do |locale|
+langs.each do |locale|
   I18n.with_locale(locale) do
     data.website.news.each do |k, item|
       path, filename = if locale == I18n.default_locale
