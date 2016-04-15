@@ -21,7 +21,11 @@ module I18nHelpers
       text << content_tag(:li, locale_link(locale, current_page))
     end
 
-    content_tag(:ul, content, class: 'locale-links')
+    locale_links_wrapper { content }
+  end
+
+  def locale_links_wrapper
+    content_tag(:ul, yield, class: 'locale-links')
   end
 
   def locale_link(locale, current_page)
