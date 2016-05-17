@@ -2,6 +2,9 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
+require './helpers/I18n_helpers'
+include I18nHelpers
+
 ###
 # Compass
 ###
@@ -103,22 +106,17 @@ activate :contentful do |f|
   }
 end
 
-unless config[:mode] == :contentful
-  require 'helpers/I18n_helpers'
-  include I18nHelpers
+langs.each do |locale|
+    data.website.news.each do |k, item|
+      I18n.with_locale(locale) do
+        path     = local_path('nieuws')
+        filename = i18n(item, :slug)
 
-  langs.each do |locale|
-      data.website.news.each do |k, item|
-        I18n.with_locale(locale) do
-          path     = local_path('nieuws')
-          filename = i18n(item, :slug)
-
-          proxy "#{path}/#{filename}/index.html",
-                'templates/news-item.html',
-                locals: { item: item },
-                ignore: true,
-                lang: locale
-        end
-    end
+        proxy "#{path}/#{filename}/index.html",
+              'templates/news-item.html',
+              locals: { item: item },
+              ignore: true,
+              lang: locale
+      end
   end
 end
