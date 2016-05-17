@@ -7,7 +7,7 @@ module I18nHelpers
   end
 
   def local_path(path, locale = I18n.locale)
-    if locale == I18n.default_locale
+    if is_default_locale?(locale)
       "/#{path}"
     else
       "/#{I18n.locale}/#{I18n.t(path, scope: :paths)}"
@@ -17,31 +17,47 @@ module I18nHelpers
   def locale_links
     return unless file_is_localizable?
 
-    content = langs.reduce('') do |text, locale|
-      text << content_tag(:li, locale_link(locale, current_resource))
+    with_locales do |text, locale|
+      path = File.basename(current_resource.target, current_resource.ext)
+      text << content_tag(:li, locale_link(locale, path))
     end
-
-    locale_links_wrapper { content }
   end
 
-  def locale_links_wrapper
-    content_tag(:ul, yield, class: 'locale-links')
+  def locale_links_for_template(path, instance, slug_field)
+    with_locales do |text, locale|
+      filename = I18n.with_locale(locale) { i18n(instance, slug_field) }
+      text << content_tag(:li, "#{locale_link(locale, path, filename)}")
+    end
   end
 
-  def locale_link(locale, current_page)
+  def locale_link(locale, path, filename=nil)
     classname = "flag-icon-#{locale}"
 
-    if locale == I18n.locale
+    if is_current_locale?(locale)
       content_tag(:span, locale, class: [classname, 'active'].join(' '))
     else
       I18n.with_locale(locale) do
-        path = File.basename(current_page.target, current_page.ext)
-        link_to(locale, local_path(path), class: classname)
+        url = [local_path(path), filename].compact.join('/')
+        link_to(locale, url, class: classname)
       end
     end
   end
 
+  def with_locales
+    content = langs.reduce('') { |text, locale| yield(text, locale) }
+
+    content_tag(:ul, content, class: 'locale-links')
+  end
+
   def file_is_localizable?
     current_resource.source_file =~ /(localizable|templates)/
+  end
+
+  def is_current_locale?(locale)
+    locale == I18n.locale
+  end
+
+  def is_default_locale?(locale)
+    locale == I18n.default_locale
   end
 end
