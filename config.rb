@@ -2,7 +2,7 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
-require File.join(File.dirname(__FILE__), 'helpers/I18n_helpers')
+require 'helpers/i18n_helpers'
 include I18nHelpers
 
 ###
