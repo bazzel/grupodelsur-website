@@ -1,0 +1,8 @@
+- content_for(:description, i18n(item, :summary))
+- content_for(:title, i18n(item, :title))
+- content_for(:locale_links, locale_links_for_template('nieuws', item, :slug))
+
+section.content.content-box
+  article
+    h2= i18n(item, :title)
+    = Kramdown::Document.new(i18n(item, :body)).to_html

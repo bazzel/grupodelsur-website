@@ -7,6 +7,13 @@ module ContentfulHelpers
        sort_by(&:position)
   end
 
+  def news
+    data.website.news.
+      values.
+      sort_by(&:createdOn).
+      reverse
+  end
+
   # `find_page` returns a Contentful Page object for the given `name`.
   # This `name` corresponds with the Contentful Page Entry that matches
   # the ID as defined in data/config.yml.

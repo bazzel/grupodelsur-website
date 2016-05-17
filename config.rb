@@ -2,6 +2,9 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
+require 'helpers/I18n_helpers'
+include I18nHelpers
+
 ###
 # Compass
 ###
@@ -69,7 +72,8 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :i18n, mount_at_root: :nl
+langs = %i(nl en)
+activate :i18n, mount_at_root: :nl, langs: langs
 activate :directory_indexes
 activate :sprockets
 
@@ -97,6 +101,22 @@ activate :contentful do |f|
   f.cda_query     = { limit: 1000 }
   f.content_types = {
     musicians: 'musicians',
-    pages:     'pages'
+    pages:     'pages',
+    news:      'news'
   }
+end
+
+langs.each do |locale|
+    data.website.news.each do |k, item|
+      I18n.with_locale(locale) do
+        path     = local_path('nieuws')
+        filename = i18n(item, :slug)
+
+        proxy "#{path}/#{filename}/index.html",
+              'templates/news-item.html',
+              locals: { item: item },
+              ignore: true,
+              lang: locale
+      end
+  end
 end
