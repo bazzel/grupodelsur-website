@@ -106,7 +106,7 @@ activate :contentful do |f|
   }
 end
 
-ready do
+unless config[:mode] == :contentful
   langs.each do |locale|
       data.website.news.each do |k, item|
         I18n.with_locale(locale) do
