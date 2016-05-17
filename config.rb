@@ -2,9 +2,6 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
-require 'helpers/I18n_helpers'
-include I18nHelpers
-
 ###
 # Compass
 ###
@@ -107,6 +104,9 @@ activate :contentful do |f|
 end
 
 unless config[:mode] == :contentful
+  require 'helpers/I18n_helpers'
+  include I18nHelpers
+
   langs.each do |locale|
       data.website.news.each do |k, item|
         I18n.with_locale(locale) do

@@ -3,9 +3,9 @@ machine:
     version: 2.2.2
 dependencies:
   post:
-    - bin/middleman contentful
+    - bundle exec middleman contentful
 deployment:
   production:
     branch: master
     commands:
-      - bin/middleman s3_sync
+      - bundle exec middleman s3_sync
