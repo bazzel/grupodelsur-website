@@ -106,17 +106,19 @@ activate :contentful do |f|
   }
 end
 
-langs.each do |locale|
-    data.website.news.each do |k, item|
-      I18n.with_locale(locale) do
-        path     = local_path('nieuws')
-        filename = i18n(item, :slug)
+ready do
+  langs.each do |locale|
+      data.website.news.each do |k, item|
+        I18n.with_locale(locale) do
+          path     = local_path('nieuws')
+          filename = i18n(item, :slug)
 
-        proxy "#{path}/#{filename}/index.html",
-              'templates/news-item.html',
-              locals: { item: item },
-              ignore: true,
-              lang: locale
-      end
+          proxy "#{path}/#{filename}/index.html",
+                'templates/news-item.html',
+                locals: { item: item },
+                ignore: true,
+                lang: locale
+        end
+    end
   end
 end
