@@ -18,7 +18,7 @@ module I18nHelpers
     return unless file_is_localizable?
 
     content = langs.reduce('') do |text, locale|
-      text << content_tag(:li, locale_link(locale, current_page))
+      text << content_tag(:li, locale_link(locale, current_resource))
     end
 
     locale_links_wrapper { content }
@@ -42,6 +42,6 @@ module I18nHelpers
   end
 
   def file_is_localizable?
-    current_page.target =~ /[localizable|templates]/
+    current_resource.source_file =~ /(localizable|templates)/
   end
 end
