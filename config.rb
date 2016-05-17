@@ -106,7 +106,8 @@ activate :contentful do |f|
   }
 end
 
-langs.each do |locale|
+unless config[:mode] == :contentful
+  langs.each do |locale|
     data.website.news.each do |k, item|
       I18n.with_locale(locale) do
         path     = local_path('nieuws')
@@ -118,5 +119,6 @@ langs.each do |locale|
               ignore: true,
               lang: locale
       end
+    end
   end
 end
