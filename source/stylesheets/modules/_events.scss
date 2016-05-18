@@ -1,0 +1,26 @@
+ul.events {
+  @include no-bullets;
+  padding-left: 0;
+
+  li.event {
+    @include adjust-font-size-to($h4-font-size);
+    .weekday {
+      display: inline-block;
+      width: 2em;
+    }
+    .day {
+      display: inline-block;
+      width: 2em;
+    }
+    .city {
+      display: inline;
+      padding-right: .5em;
+      color: $primary-color;
+      font-style: italic;
+    }
+    .title {
+      display: inline;
+    }
+
+  }
+}

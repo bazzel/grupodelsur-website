@@ -1,0 +1,5 @@
+li.event
+  .weekday= I18n.l(event.startingAt, format: '%a')
+  .day= I18n.l(event.startingAt, format: '%d')
+  .city= event.venue.city
+  .title= event.title

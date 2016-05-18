@@ -14,6 +14,21 @@ module ContentfulHelpers
       reverse
   end
 
+  def future_events
+    data.website.events.
+      values.
+      select { |e| e.startingAt >= Date.today }.
+      sort_by(&:startingAt)
+  end
+
+  def future_events_grouped_by_month
+    grouped_by_month future_events, :startingAt
+  end
+
+  def grouped_by_month(events, date_field)
+    events.group_by { |e| Date.new(e[date_field].year, e[date_field].month, 1) }
+  end
+
   # `find_page` returns a Contentful Page object for the given `name`.
   # This `name` corresponds with the Contentful Page Entry that matches
   # the ID as defined in data/config.yml.

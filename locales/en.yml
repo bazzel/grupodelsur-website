@@ -2,8 +2,11 @@
 en:
   musicians: Musicians
   news: News
+  events: Agenda
   paths:
+    #<filename>: <path>
     musici: musicians
     two-columns: two-columns
     nieuws: news
+    agenda: events
   read_more: Read more

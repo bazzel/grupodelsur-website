@@ -102,7 +102,9 @@ activate :contentful do |f|
   f.content_types = {
     musicians: 'musicians',
     pages:     'pages',
-    news:      'news'
+    news:      'news',
+    events:    'events',
+    venues:    'venues'
   }
 end
 
