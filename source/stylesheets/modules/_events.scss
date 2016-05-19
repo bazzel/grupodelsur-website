@@ -3,7 +3,7 @@ ul.events {
   padding-left: 0;
 
   li.event {
-    @include adjust-font-size-to($h4-font-size);
+    @include adjust-font-size-to($h5-font-size);
     .weekday {
       display: inline-block;
       width: 2em;

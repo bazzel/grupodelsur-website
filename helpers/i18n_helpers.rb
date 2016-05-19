@@ -7,11 +7,11 @@ module I18nHelpers
   end
 
   def local_path(path, locale = I18n.locale)
-    if is_default_locale?(locale)
-      "/#{path}"
-    else
-      "/#{I18n.locale}/#{I18n.t(path, scope: :paths)}"
-    end
+    local_path = []
+    local_path << locale unless is_default_locale?(locale)
+    local_path << I18n.t(path, scope: :paths, default: path) unless path == 'index'
+
+    local_path.join('/').prepend('/')
   end
 
   def locale_links

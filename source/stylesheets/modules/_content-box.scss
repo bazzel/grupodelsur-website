@@ -1,6 +1,7 @@
 .content-box {
   @include card;
   padding: rhythm() 1em;
+  margin-bottom: rhythm();
 
   background: $content-box-bg-color;
 
