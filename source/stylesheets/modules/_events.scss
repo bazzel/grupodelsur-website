@@ -3,14 +3,14 @@ ul.events {
   padding-left: 0;
 
   li.event {
-    @include adjust-font-size-to($h5-font-size);
-    .weekday {
+    .weekday, .day {
       display: inline-block;
       width: 2em;
+      font-weight: bold;
     }
     .day {
-      display: inline-block;
-      width: 2em;
+      text-align: right;
+      padding-right: 1em;
     }
     .city {
       display: inline;
