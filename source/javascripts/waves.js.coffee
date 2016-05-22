@@ -2,6 +2,7 @@
 #
 #= require './vendor/waves'
 
-Waves.attach('menu li', ['waves-block'])
-Waves.init()
+$ ->
+  Waves.attach('menu li', ['waves-block'])
+  Waves.init()
 
