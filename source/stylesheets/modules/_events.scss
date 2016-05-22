@@ -22,5 +22,14 @@ ul.events {
       display: inline;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        background: none;
+        text-decoration: underline;
+      }
+    }
+
   }
 }

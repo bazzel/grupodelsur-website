@@ -1,0 +1,8 @@
+- content_for(:description, i18n(event, :title))
+- content_for(:title, i18n(event, :title))
+- content_for(:locale_links, locale_links_for_template('agenda', event, :asSlug))
+
+section.content.content-box
+  article
+    h2= i18n(event, :title)
+
