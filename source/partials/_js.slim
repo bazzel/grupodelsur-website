@@ -1,0 +1,5 @@
+/ When you need extra scripts, you can add a content_for to the partial:
+/  - content_for(:scripts, javascript_include_tag('http://maps.google.com/maps/api/js'))
+= yield_content(:scripts)
+= javascript_include_tag 'all'
+= partial 'partials/ga', locals: { tracking_id: data.config.tracking_id }

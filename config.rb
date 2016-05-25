@@ -2,8 +2,12 @@ require 'susy'
 require 'modular-scale'
 require 'bourbon'
 
-require 'helpers/I18n_helpers'
+require 'helpers/i18n_helpers'
 include I18nHelpers
+require 'helpers/contentful_helpers'
+include ContentfulHelpers
+
+Dir['lib/mappers/*.rb'].each {|file| require file }
 
 ###
 # Compass
@@ -102,12 +106,15 @@ activate :contentful do |f|
   f.content_types = {
     musicians: 'musicians',
     pages:     'pages',
-    news:      'news'
+    news:      'news',
+    events:    { mapper: EventMapper,     id: 'events' },
+    venues:    'venues'
   }
 end
 
-langs.each do |locale|
-    data.website.news.each do |k, item|
+unless config[:mode] == :contentful
+  langs.each do |locale|
+    news.each do |item|
       I18n.with_locale(locale) do
         path     = local_path('nieuws')
         filename = i18n(item, :slug)
@@ -118,5 +125,19 @@ langs.each do |locale|
               ignore: true,
               lang: locale
       end
+    end
+
+    future_events.each do |event|
+      I18n.with_locale(locale) do
+        path     = local_path('agenda')
+        filename = event.asSlug
+
+        proxy "#{path}/#{filename}/index.html",
+              'templates/event.html',
+              locals: { event: event },
+              ignore: true,
+              lang: locale
+      end
+    end
   end
 end

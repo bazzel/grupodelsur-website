@@ -1,0 +1,22 @@
+section.content
+  section.main-content
+    section.content-box
+      article
+        h2= t(:events)
+        ul
+          - future_events[0...3].each do |event|
+            li
+              = link_to "#{local_path('agenda')}/#{i18n(event, :asSlug)}" do
+                => I18n.l(event.startingAt.to_date, format: :short)
+                | -
+                =< event.venue.city
+
+        p= link_to t(:more_events), local_path('agenda')
+
+  section.secondary-content.content-box
+    h2= t(:news)
+    ul
+      - news.each do |item|
+        li= link_to i18n(item, :title), "#{local_path('nieuws')}/#{i18n(item, :slug)}"
+
+    p= link_to t(:more_news), local_path('nieuws')

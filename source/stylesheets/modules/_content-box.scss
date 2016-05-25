@@ -1,14 +1,11 @@
 .content-box {
   @include card;
   padding: rhythm() 1em;
+  margin-bottom: rhythm();
 
   background: $content-box-bg-color;
 
   h1 {
     text-align: center;
-
-    @include susy-breakpoint($break-large) {
-      display: none;
-    }
   }
 }

@@ -2,8 +2,15 @@
 en:
   musicians: Musicians
   news: News
+  events: Agenda
   paths:
+    #<filename>: <path>
     musici: musicians
     two-columns: two-columns
     nieuws: news
+    agenda: events
   read_more: Read more
+  more_events: More concerts
+  more_news: More news
+  event:
+    tickets: Tickets

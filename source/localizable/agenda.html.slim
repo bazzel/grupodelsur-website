@@ -1,0 +1,13 @@
+- page = find_page 'events'
+
+- content_for(:description, i18n(page, :description))
+- content_for(:title, i18n(page, :title))
+
+section.content.content-box
+  h1.hide-for-large= i18n(page, :title)
+  - future_events_grouped_by_month.each do |date, events|
+    h2= I18n.localize(date, :format => "%B %Y")
+    ul.events
+      - events.each do |event|
+        = partial 'partials/event-item', locals: { event: event }
+
