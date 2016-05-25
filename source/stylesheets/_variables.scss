@@ -22,7 +22,7 @@ $ms-base                 : $base-font-size $base-line-height;
 
 // Font sizes
 //
-// http://modularscale.com/scale/?px1=16&px2=42&ra1=1.5&ra2=0
+// http://www.modularscale.com/?18,27&px&1.25&web&text
 $h1-font-size            : ms(5);
 $h2-font-size            : ms(4);
 $h3-font-size            : ms(3);
@@ -44,7 +44,6 @@ $header-margin-bottom    : 1;
 
 // Colors
 $primary-color: hsl(336, 69%, 21%);
-$blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;

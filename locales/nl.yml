@@ -4,3 +4,7 @@ nl:
   news: Nieuws
   events: Agenda
   read_more: Lees verder
+  more_events: Meer concerten
+  more_news: Meer nieuws
+  event:
+    tickets: Kaarten

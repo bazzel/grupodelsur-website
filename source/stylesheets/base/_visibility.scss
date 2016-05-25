@@ -1,0 +1,6 @@
+// Inspired by http://foundation.zurb.com/sites/docs/visibility.html
+.hide-for-large {
+  @include susy-breakpoint($break-large) {
+    display: none;
+  }
+}

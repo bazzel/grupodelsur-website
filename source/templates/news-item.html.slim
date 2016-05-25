@@ -4,5 +4,5 @@
 
 section.content.content-box
   article
-    h2= i18n(item, :title)
+    h1= i18n(item, :title)
     = Kramdown::Document.new(i18n(item, :body)).to_html

@@ -4,6 +4,6 @@
 - content_for(:title, i18n(page, :title))
 
 section.content.content-box
-  h1= i18n(page, :title)
+  h1.hide-for-large= i18n(page, :title)
   - musicians.each do |musician|
     = partial 'partials/musician', locals: { musician: musician }

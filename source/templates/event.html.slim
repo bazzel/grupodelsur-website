@@ -4,10 +4,27 @@
 - content_for(:scripts, javascript_include_tag('http://maps.google.com/maps/api/js'))
 
 section.content.content-box
-  article
-    h2= i18n(event, :title)
+  article.event
+    h1= i18n(event, :title)
+    h2= I18n.l(event.startingAt, format: :long)
 
-    #map
+    - if event.description
+      = Kramdown::Document.new(i18n(event, :description)).to_html
+
+    address
+      = link_to event.venue.name, event.venue.website
+      br
+      = event.venue.address
+      br
+      = [event.venue.postalCode, event.venue.city].join(' ')
+
+    - if event.ticketPrice
+      p.ticket-price
+        = I18n.t('event.tickets')
+        | :
+        =< event.ticketPrice
+
+    #map.map
 
 javascript:
   $(function() {

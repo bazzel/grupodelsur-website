@@ -10,3 +10,7 @@ en:
     nieuws: news
     agenda: events
   read_more: Read more
+  more_events: More concerts
+  more_news: More news
+  event:
+    tickets: Tickets
