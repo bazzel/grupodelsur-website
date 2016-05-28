@@ -11,6 +11,7 @@ en:
     agenda: events
   read_more: Read more
   more_events: More concerts
+  no_events: At this time there are no concerts scheduled.
   more_news: More news
   event:
     tickets: Tickets

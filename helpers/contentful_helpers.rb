@@ -21,8 +21,8 @@ module ContentfulHelpers
       sort_by(&:startingAt)
   end
 
-  def future_events_grouped_by_month
-    grouped_by_month future_events, :startingAt
+  def events_grouped_by_month(events)
+    grouped_by_month events, :startingAt
   end
 
   def grouped_by_month(events, date_field)

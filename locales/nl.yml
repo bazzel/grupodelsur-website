@@ -5,6 +5,7 @@ nl:
   events: Agenda
   read_more: Lees verder
   more_events: Meer concerten
+  no_events: Op dit moment zijn er geen concerten gepland.
   more_news: Meer nieuws
   event:
     tickets: Kaarten
