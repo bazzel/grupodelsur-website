@@ -3,6 +3,7 @@ en:
   musicians: Musicians
   news: News
   events: Agenda
+  gallery: Gallery
   paths:
     #<filename>: <path>
     musici: musicians
