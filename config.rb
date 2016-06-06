@@ -6,6 +6,8 @@ require 'helpers/i18n_helpers'
 include I18nHelpers
 require 'helpers/contentful_helpers'
 include ContentfulHelpers
+require 'helpers/photoswipe_helpers'
+include PhotoswipeHelpers
 
 Dir['lib/mappers/*.rb'].each {|file| require file }
 
@@ -80,6 +82,7 @@ langs = %i(nl en)
 activate :i18n, mount_at_root: :nl, langs: langs
 activate :directory_indexes
 activate :sprockets
+activate :automatic_image_sizes
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'grupodelsur' # The name of the S3 bucket you are targetting. This is globally unique.

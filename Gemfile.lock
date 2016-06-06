@@ -224,6 +224,7 @@ DEPENDENCIES
   breakpoint
   byebug
   contentful_middleman!
+  fastimage
   middleman
   middleman-autoprefixer
   middleman-compass

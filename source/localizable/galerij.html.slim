@@ -12,6 +12,4 @@ section.content.content-box
 
       .picture itemscope="" itemtype="http://schema.org/ImageGallery"
         - gallery.images.each do |image|
-          figure itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"
-            a data-size="1000x667" href=image.url itemprop="contentUrl"
-              img alt=image.title height="400" itemprop="thumbnail" src=image.url width="600"
+          = gallery_image_tag image
