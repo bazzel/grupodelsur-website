@@ -14,6 +14,11 @@ module ContentfulHelpers
       reverse
   end
 
+  def galleries
+    data.website.galleries.
+      values
+  end
+
   def future_events
     data.website.events.
       values.

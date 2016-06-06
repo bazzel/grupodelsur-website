@@ -6,6 +6,13 @@
 section.content.content-box
   h1.hide-for-large= i18n(page, :title)
 
+  - galleries.each do |gallery|
+    article
+      h2= link_to i18n(gallery, :title), "#{local_path('gallerij')}/#{i18n(gallery, :slug)}"
+
+      - gallery.images.each do |image|
+        = image_tag("#{image.url}?w=100")
+
 javascript:
   var openPhotoSwipe = function() {
     var pswpElement = document.querySelectorAll('.pswp')[0];
@@ -35,5 +42,5 @@ javascript:
   };
 
   $(function() {
-    openPhotoSwipe();
+    // openPhotoSwipe();
   });

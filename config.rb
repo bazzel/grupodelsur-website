@@ -108,7 +108,8 @@ activate :contentful do |f|
     pages:     'pages',
     news:      'news',
     events:    { mapper: EventMapper,     id: 'events' },
-    venues:    'venues'
+    venues:    'venues',
+    galleries: 'galleries'
   }
 end
 
