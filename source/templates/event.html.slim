@@ -27,7 +27,7 @@ section.content.content-box
     #map.map
 
 javascript:
-  $(function() {
+  (function($) {
     var map = new GMaps({
       div: '#map',
       lat: #{event.venue.location.lat},
@@ -45,4 +45,4 @@ javascript:
         content: contentString
       }
     });
-  })
+  })(jQuery);

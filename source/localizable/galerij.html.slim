@@ -10,37 +10,8 @@ section.content.content-box
     article
       h2= link_to i18n(gallery, :title), "#{local_path('gallerij')}/#{i18n(gallery, :slug)}"
 
-      - gallery.images.each do |image|
-        = image_tag("#{image.url}?w=100")
-
-javascript:
-  var openPhotoSwipe = function() {
-    var pswpElement = document.querySelectorAll('.pswp')[0];
-
-    // build items array
-    var items = [{
-      src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-      w: 964,
-      h: 1024
-    }, {
-      src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-      w: 1024,
-      h: 683
-    }];
-
-    // define options (if needed)
-    var options = {
-      // history & focus options are disabled on CodePen
-      history: false,
-      focus: false,
-      showAnimationDuration: 0,
-      hideAnimationDuration: 0
-    };
-
-    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-    gallery.init();
-  };
-
-  $(function() {
-    // openPhotoSwipe();
-  });
+      .picture itemscope="" itemtype="http://schema.org/ImageGallery"
+        - gallery.images.each do |image|
+          figure itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"
+            a data-size="1000x667" href=image.url itemprop="contentUrl"
+              img alt=image.title height="400" itemprop="thumbnail" src=image.url width="600"

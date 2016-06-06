@@ -9,7 +9,6 @@ html.no-js lang=""
     link href="apple-touch-icon.png" rel="apple-touch-icon" /
     /! Place favicon.ico in the root directory
     = stylesheet_link_tag 'main'
-    = partial 'partials/js'
   body
     /![if lt IE 8]
       | <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p
@@ -20,3 +19,4 @@ html.no-js lang=""
       = yield
 
     = partial 'partials/photoswipe'
+= partial 'partials/js'
