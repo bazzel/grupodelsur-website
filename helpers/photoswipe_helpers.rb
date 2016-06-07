@@ -10,6 +10,9 @@ module PhotoswipeHelpers
                                itemtype: 'http://schema.org/.ImageObject')
   end
 
+  # @example
+  #   size = image_size('//images.contentful..../image.jpg')
+  #   p "width: #{size.w}", "height: #{size.h}"
   def image_size(url)
     h = Hash[*%i(w h).zip(FastImage.size(preprend_protocol(url))).flatten]
     OpenStruct.new(h)
