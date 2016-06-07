@@ -24,25 +24,4 @@ section.content.content-box
         | :
         =< event.ticketPrice
 
-    #map.map
-
-javascript:
-  (function($) {
-    var map = new GMaps({
-      div: '#map',
-      lat: #{event.venue.location.lat},
-      lng: #{event.venue.location.lon}
-    });
-    var contentString = '<div class="infoWindow">' +
-        '<p><b>#{event.venue.name}</b></p>' +
-        '<p>#{event.venue.address}</p>' +
-        '<p>#{event.venue.postalCode} #{event.venue.city}</p>' +
-      '</div>';
-    map.addMarker({
-      lat: #{event.venue.location.lat},
-      lng: #{event.venue.location.lon},
-      infoWindow: {
-        content: contentString
-      }
-    });
-  })(jQuery);
+    #map.map data-lat=event.venue.location.lat data-lng=event.venue.location.lon data-name=event.venue.name data-address=event.venue.address data-city=[event.venue.postalCode, event.venue.city].join(' ')
