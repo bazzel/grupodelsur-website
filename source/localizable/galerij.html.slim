@@ -8,7 +8,7 @@ section.content.content-box
 
   - galleries.each do |gallery|
     article
-      h2= link_to i18n(gallery, :title), "#{local_path('gallerij')}/#{i18n(gallery, :slug)}"
+      h2= i18n(gallery, :title)
 
       .picture itemscope="" itemtype="http://schema.org/ImageGallery"
         - gallery.images.each do |image|

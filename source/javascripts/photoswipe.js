@@ -36,7 +36,7 @@
             image[index].src = value['src'];
         });
 
-        $pic.on('click', 'figure', function(event) {
+        $pic.on('click', 'a', function(event) {
             event.preventDefault();
 
             var $index = $(this).index();

@@ -2,3 +2,4 @@
 #= require 'waves'
 #= require 'gmaps'
 #= require 'photoswipe'
+#= require 'justified-gallery'
