@@ -6,11 +6,22 @@ header {
   @include full;
 }
 
+footer {
+  @include full;
+  .about-us {
+    @include span(8);
+  }
+  .contact {
+    @include span(last 4);
+  }
+}
+
 aside {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 20em;
+  z-index: 1;
   // IE10+:
   // left: 0;
   // transform: translate3d(-100%, 0, 0);

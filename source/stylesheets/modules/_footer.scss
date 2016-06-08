@@ -1,0 +1,29 @@
+footer {
+  @include margin-leader(4);
+  background: $footer-bg-color;
+  color: $footer-color;
+  .container {
+    @include rhythm(2,0,0,2);
+  }
+
+  h3 {
+    @include adjust-font-size-to(ms(2), 2);
+    font-variant: small-caps;
+    /*@include margin-trailer(1, ms(0));*/
+  }
+
+  p, address {
+    @include adjust-font-size-to(ms(-2));
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $footer-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
