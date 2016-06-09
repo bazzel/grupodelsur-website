@@ -26,4 +26,18 @@ footer {
       text-decoration: underline;
     }
   }
+
+  ul.social-media {
+    @include horizontal-list(8px);
+    @include rhythm(1,0,0,1);
+    a {
+      display: inline-block;
+    }
+
+    @each $social-media in facebook, twitter, youtube, soundcloud, instagram {
+      .#{$social-media} {
+        @include sprite-replace-text-with-dimensions(sprite-map("icons/*.png"), $social-media);
+      }
+    }
+  }
 }
