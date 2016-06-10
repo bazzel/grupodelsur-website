@@ -22,6 +22,7 @@ footer {
 
   p, address {
     @include adjust-font-size-to(ms(-2));
+    @include margin-trailer(1);
   }
 
   a {
@@ -34,7 +35,7 @@ footer {
 
   ul.social-media {
     @include inline-block-list(8px);
-    @include rhythm(2,0,0,0);
+    @include rhythm(1,0,0,0);
     a {
       display: inline-block;
     }
