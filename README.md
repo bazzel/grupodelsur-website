@@ -35,3 +35,8 @@ This project uses [Middleman::S3Sync](https://github.com/fredjean/middleman-s3_s
 ## And...
 
 * Flag Icons by [GoSquared](http://www.gosquared.com/)
+* Social media icons downloaded from [Flaticon](http://www.flaticon.com/)
+* [Justified Gallery](http://miromannino.github.io/Justified-Gallery/)
+* [PhotoSwipe](http://photoswipe.com/)
+* [Waves](http://fian.my.id/Waves/)
+* [gmaps.js](hpneo.github.io/gmaps)
