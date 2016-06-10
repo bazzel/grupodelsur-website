@@ -6,16 +6,6 @@ header {
   @include full;
 }
 
-footer {
-  @include full;
-  .about-us {
-    @include span(8);
-  }
-  .contact {
-    @include span(last 4);
-  }
-}
-
 aside {
   position: fixed;
   top: 0;
@@ -53,6 +43,18 @@ aside {
   .secondary-content {
     @include span(last 6);
   }
+
+  footer {
+    .address {
+      @include span(6);
+      &:last-of-type {
+        @include last;
+      }
+    }
+    .social-media {
+      @include full;
+    }
+  }
 }
 
 @include susy-breakpoint($break-large, $break-large nobreak) {
@@ -70,5 +72,17 @@ aside {
 
   .content {
     @include span(8 last);
+  }
+
+  footer {
+    .about-us {
+      @include span(8);
+    }
+    .contact {
+      @include span(4 last);
+    }
+    .address {
+      @include full;
+    }
   }
 }
