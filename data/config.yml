@@ -1,6 +1,26 @@
 tracking_id: UA-XXXXX-Y
 site_title: Grupo del Sur
 
+bookings:
+  name: Lemontree-PR
+  url: http://www.lemontree-pr.nl
+  contact: Yvonne van Egmond
+  email: Yvonne@lemontree-PR.nl
+  phone: '+31 (0)6 28 64 20 62'
+
+contact:
+  name: Anne-Marie van de Grint
+  email: info@grupodelsur.nl
+  phone: '+31 (0)13 45 63 483'
+  coc: 60745614
+
+social_media:
+  twitter: grupodelsur
+  facebook: GrupoDelSur.nl
+  youtube: UC33aj1vwIpvYNyCZJNK1Tpg
+  soundcloud: grupodelsur
+  instagram: grupodelsur
+
 pages:
   musicians: 58kwvGu0nKoWgE6EmO0M00
   news: 5bHK7EmkekGgkAQCaeCkCc

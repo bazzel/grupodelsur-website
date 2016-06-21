@@ -3,11 +3,7 @@ module PhotoswipeHelpers
     size = image_size(image.url)
     w    = size.w
     h    = size.h
-    link = link_to thumbnail(image, w: 800), image.url, 'data-size': "#{w}x#{h}", itemprop: 'contentUrl'
-
-    #content_tag(:figure, link, itemprop: 'associatedMedia',
-                               #itemscope: '',
-                               #itemtype: 'http://schema.org/.ImageObject')
+    link_to thumbnail(image, w: 800), image.url, 'data-size': "#{w}x#{h}", itemprop: 'contentUrl'
   end
 
   # @example

@@ -9,24 +9,24 @@ footer
         .address
           h3 Boekingen
           address
-            = link_to 'Lemontree-PR', 'http://www.lemontree-pr.nl'
+            = bookings_link
             br
-            = mail_to 'Yvonne@lemontree-PR.nl', 'Yvonne van Egmond'
+            = bookings_mail
             br
-            = link_to '+31 (0)6 28 64 20 62', 'tel:+31(0)628642062'
+            = bookings_phone
 
         .address
           h3 Contact
           address
-            = mail_to 'info@grupodelsur.nl', 'Anne-Marie van de Grint'
+            = contact_mail
             br
-            = link_to '+31 (0)13 45 63 483', 'tel:+31(0)134563483'
+            = contact_phone
             br
-            | KvK-nummer 60745614
+            = coc
 
       ul.social-media
-        li= link_to 'Twitter', 'https://twitter.com/grupodelsur', class: 'twitter'
-        li= link_to 'Facebook', 'https://www.facebook.com/GrupoDelSur.nl', class: 'facebook'
-        li= link_to 'Youtube', 'https://www.youtube.com/channel/UC33aj1vwIpvYNyCZJNK1Tpg', class: 'youtube'
-        li= link_to 'SoundCloud', 'https://soundcloud.com/grupodelsur', class: 'soundcloud'
-        li= link_to 'Instagram', 'https://www.instagram.com/grupodelsur/', class: 'instagram'
+        li= link_to_twitter
+        li= link_to_facebook
+        li= link_to_youtube
+        li= link_to_soundcloud
+        li= link_to_instagram

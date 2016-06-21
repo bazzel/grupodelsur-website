@@ -22,7 +22,7 @@ footer {
 
   p, address {
     @include adjust-font-size-to(ms(-2));
-    @include margin-trailer(1);
+    @include margin-trailer(1, ms(-2));
   }
 
   a {
