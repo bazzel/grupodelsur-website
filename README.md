@@ -14,11 +14,16 @@ You will need the following things properly installed on your computer:
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `gem install bundler`
-* `bundle install`
+* `bundle install --binstubs`
+* `cp .env.example .env`
+* Get a proper Content Delivery API key
+
+## Get content
+* `bin/middleman contentful`
 
 ## Running / Development
 
-* `middleman`
+* `bin/middleman`
 * Visit your app at [http://localhost:4567](http://localhost:4567).
 
 ## Deployment to S3
