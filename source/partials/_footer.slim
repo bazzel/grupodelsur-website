@@ -1,8 +1,9 @@
+- page = find_page 'footer'
 footer
   .container
     .about-us
-      h3 Hoi, dit zijn wij
-      p Bezield bandoneonspel, meeslepende tango’s en rauwe emoties: Grupo del Sur raakt u in het hart! Astor Piazzolla is dé grote inspirator van deze Nederlands-Argentijnse groep. De musici van Grupo del Sur treffen de juiste toon. Zij staan bekend als een van de beste kwintetten van Europa. In het nieuwe programma Piazzolla y Misterio onderzoeken zij het mysterie van zijn muziek. Waarom raakt deze muziek zoveel mensen? Ervaar het zelf en laat u meevoeren in deze wereld van melancholie en hartstocht.
+      h3= i18n(page, :title)
+      = Kramdown::Document.new(i18n(page, :body)).to_html
 
     .contact
       .addresses
