@@ -1,5 +1,12 @@
 module ContentfulHelpers
 
+  def multimedia_fragments
+    data.website.multimedia_fragments.
+       values.
+       select(&:active).
+       sort_by(&:position)
+  end
+
   def musicians
     data.website.musicians.
        values.

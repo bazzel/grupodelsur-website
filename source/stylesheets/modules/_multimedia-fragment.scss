@@ -1,0 +1,12 @@
+.multimedia-fragment {
+  @include margin-trailer(1);
+
+  .youtube {
+    height: rhythm(12);
+    text-align: center;
+  }
+
+  .soundcloud {
+    height: rhythm(6);
+  }
+}

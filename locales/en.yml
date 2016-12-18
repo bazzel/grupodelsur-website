@@ -4,12 +4,15 @@ en:
   news: News
   events: Agenda
   gallery: Gallery
+  multimedia: Multimedia
   paths:
     #<filename>: <path>
     musici: musicians
     two-columns: two-columns
     nieuws: news
     agenda: events
+    galerij: gallery
+    multimedia: multimedia
   read_more: Read more
   more_events: More concerts
   no_events: At this time there are no concerts scheduled.

@@ -112,7 +112,8 @@ activate :contentful do |f|
     news:      'news',
     events:    { mapper: EventMapper,     id: 'events' },
     venues:    'venues',
-    galleries: 'galleries'
+    galleries: 'galleries',
+    multimedia_fragments: 'multimediaFragments'
   }
 end
 
